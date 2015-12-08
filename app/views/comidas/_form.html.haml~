@@ -8,4 +8,4 @@
     = f.input :preco
 
   .form-actions
-    = f.submit 'Salvar'
+    = f.button :submit

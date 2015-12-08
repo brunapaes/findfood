@@ -1,0 +1,11 @@
+= simple_form_for(@comida) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :codigo
+    = f.input :nome
+    = f.input :tipo
+    = f.input :preco
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,25 @@
+%h1 Listing cadastros
+
+%table
+  %thead
+    %tr
+      %th Nome
+      %th Email
+      %th Senha
+      %th
+      %th
+      %th
+
+  %tbody
+    - @cadastros.each do |cadastro|
+      %tr
+        %td= cadastro.nome
+        %td= cadastro.email
+        %td= cadastro.senha
+        %td= link_to 'Show', cadastro
+        %td= link_to 'Edit', edit_cadastro_path(cadastro)
+        %td= link_to 'Excluir', cadastro, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Cadastro', new_cadastro_path

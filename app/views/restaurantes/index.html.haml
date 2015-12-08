@@ -1,0 +1,23 @@
+%h1 Listing restaurantes
+
+%table
+  %thead
+    %tr
+      %th Nome
+      %th Tipo
+      %th
+      %th
+      %th
+
+  %tbody
+    - @restaurantes.each do |restaurante|
+      %tr
+        %td= restaurante.nome
+        %td= restaurante.tipo
+        %td= link_to 'Show', restaurante
+        %td= link_to 'Edit', edit_restaurante_path(restaurante)
+        %td= link_to 'Destroy', restaurante, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Restaurante', new_restaurante_path

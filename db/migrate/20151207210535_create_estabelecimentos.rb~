@@ -1,0 +1,12 @@
+class CreateEstabelecimentos < ActiveRecord::Migration
+  def change
+    create_table :estabelecimentos do |t|
+      t.string :codigo
+      t.string :nome
+      t.string :tipo
+      t.string :preco
+
+      t.timestamps null: false
+    end
+  end
+end

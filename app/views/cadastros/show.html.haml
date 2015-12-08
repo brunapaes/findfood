@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Nome:
+  = @cadastro.nome
+%p
+  %b Email:
+  = @cadastro.email
+%p
+  %b Senha:
+  = @cadastro.senha
+
+= link_to 'Edit', edit_cadastro_path(@cadastro)
+\|
+= link_to 'Back', cadastros_path

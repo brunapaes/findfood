@@ -1,0 +1,27 @@
+%h1 Listing comidas
+
+%table
+  %thead
+    %tr
+      %th Codigo
+      %th Nome
+      %th Tipo
+      %th Preco
+      %th
+      %th
+      %th
+
+  %tbody
+    - @comidas.each do |comida|
+      %tr
+        %td= comida.codigo
+        %td= comida.nome
+        %td= comida.tipo
+        %td= comida.preco
+        %td= link_to 'Show', comida
+        %td= link_to 'Edit', edit_comida_path(comida)
+        %td= link_to 'Destroy', comida, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Comida', new_comida_path

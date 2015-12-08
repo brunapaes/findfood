@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Codigo:
+  = @comida.codigo
+%p
+  %b Nome:
+  = @comida.nome
+%p
+  %b Tipo:
+  = @comida.tipo
+%p
+  %b Preco:
+  = @comida.preco
+
+= link_to 'Edit', edit_comida_path(@comida)
+\|
+= link_to 'Back', comidas_path

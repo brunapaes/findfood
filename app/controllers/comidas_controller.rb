@@ -69,6 +69,6 @@ class ComidasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comida_params
-      params.require(:comida).permit(:codigo, :nome, :tipo, :preco)
+      params.require(:comida).permit(:nome, :tipo, :valor)
     end
 end

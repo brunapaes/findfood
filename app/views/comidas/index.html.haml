@@ -3,10 +3,9 @@
 %table
   %thead
     %tr
-      %th Codigo
       %th Nome
       %th Tipo
-      %th Preco
+      %th Valor
       %th
       %th
       %th
@@ -14,10 +13,9 @@
   %tbody
     - @comidas.each do |comida|
       %tr
-        %td= comida.codigo
         %td= comida.nome
         %td= comida.tipo
-        %td= comida.preco
+        %td= comida.valor
         %td= link_to 'Show', comida
         %td= link_to 'Edit', edit_comida_path(comida)
         %td= link_to 'Excluir', comida, :method => :delete, :data => { :confirm => 'Are you sure?' }

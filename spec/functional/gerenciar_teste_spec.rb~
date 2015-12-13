@@ -1,0 +1,69 @@
+require 'spec_helper'
+require 'rails_helper'
+
+feature 'gerenciar testes' do
+
+  before(:each) do
+    @comida = create(:comida, nome: "hamburguer")
+  end
+
+
+  let(:dados) do {
+
+	numero: "20151",
+	valor: "7.0",
+    comida: "hamburguer"
+   }
+  end
+
+  scenario 'incluir testes' do #, :js => true  do
+    visit new_testes_path
+    preencher(dados)
+    click_button 'Salvar'
+    #save_and_open_page
+    verificar(dados)
+	
+
+  end
+
+  scenario 'alterar testes' do #, :js => true  do
+
+    testes = FactoryGirl.create(:testes, comida: @nome )
+
+    visit edit_testes_path(testes)
+    preencher(dados)
+    #save_and_open_page
+    click_button 'Salvar'
+    #save_and_open_page
+    verificar(dados)
+
+
+  end
+
+
+  scenario 'excluir testes' do #, :js => true  do
+
+    testes = FactoryGirl.create(:testes, comida: @nome)
+    visit testes_path
+    #save_and_open_page
+    click_link 'Excluir'
+
+  end
+
+  def preencher(dados)
+
+    fill_in 'Numero',  with: dados[:numero]
+    fill_in 'Valor',  with: dados[:valor]
+    select dados[:nome], from: "Comida"
+
+  end
+ 
+  def verificar(dados)
+
+    page.should have_content "Numero: #{dados[:numero]}"
+    page.should have_content "Valor: #{dados[:valor]}"
+    page.should have_content "Comida: #{dados[:nome]}"
+
+  end
+
+end

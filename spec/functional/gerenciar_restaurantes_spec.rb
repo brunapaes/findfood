@@ -4,13 +4,13 @@ require 'rails_helper'
 
 feature 'Registrar Restaurante' do
 
-  scenario 'incluir Restaurante' do 
+  scenario 'incluir Restaurantes' do 
 
     visit new_restaurante_path
     preencher_e_verificar_restaurante
   end
 
-  scenario 'alterar Restaurante' do 
+  scenario 'alterar Restaurantes' do 
 
     restaurante = FactoryGirl.create(:restaurante)
     visit edit_restaurante_path(restaurante)
@@ -29,13 +29,13 @@ feature 'Registrar Restaurante' do
 
    def preencher_e_verificar_restaurante
 
-      fill_in 'Nome',     :with => "Giraffas"
-      fill_in 'Tipo',  :with => "Fast Food"
+      fill_in 'Nome',  :with => "Bar"
+      fill_in 'Tipo',  :with => "ovo"
 
       click_button 'Salvar'
 
-      expect(page).to have_content 'Nome: Giraffas'
-      expect(page).to have_content 'Tipo: Fast Food'
+      expect(page).to have_content 'Nome: Bar'
+      expect(page).to have_content 'Tipo: ovo'
 
    end
 end

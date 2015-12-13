@@ -1,9 +1,8 @@
 FactoryGirl.define do
   factory :comida do
-    codigo "MyString"
-nome "MyString"
+    nome "MyString"
 tipo "MyString"
-preco "MyString"
+valor 1.5
   end
 
 end

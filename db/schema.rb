@@ -11,16 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151207215955) do
-
-  create_table "alimentos", force: :cascade do |t|
-    t.string   "codigo"
-    t.string   "nome"
-    t.string   "tipo"
-    t.string   "preco"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20151213160852) do
 
   create_table "cadastros", force: :cascade do |t|
     t.string   "nome"
@@ -31,26 +22,17 @@ ActiveRecord::Schema.define(version: 20151207215955) do
   end
 
   create_table "comidas", force: :cascade do |t|
-    t.string   "codigo"
     t.string   "nome"
     t.string   "tipo"
-    t.string   "preco"
+    t.float    "valor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "estabelecimentos", force: :cascade do |t|
-    t.string   "codigo"
-    t.string   "nome"
-    t.string   "tipo"
-    t.string   "preco"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "pedidos", force: :cascade do |t|
-    t.string   "numero"
-    t.string   "valor"
+  create_table "locals", force: :cascade do |t|
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.decimal  "elevacao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -61,5 +43,15 @@ ActiveRecord::Schema.define(version: 20151207215955) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "solicitacaos", force: :cascade do |t|
+    t.integer  "numero"
+    t.float    "valor"
+    t.integer  "comida_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "solicitacaos", ["comida_id"], name: "index_solicitacaos_on_comida_id"
 
 end

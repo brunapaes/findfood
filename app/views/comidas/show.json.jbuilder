@@ -1,1 +1,1 @@
-json.extract! @comida, :id, :codigo, :nome, :tipo, :preco, :created_at, :updated_at
+json.extract! @comida, :id, :nome, :tipo, :valor, :created_at, :updated_at

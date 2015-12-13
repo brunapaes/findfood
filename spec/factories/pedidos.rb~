@@ -1,0 +1,10 @@
+FactoryGirl.define do
+  factory :pedido do
+    numero "MyString"
+valor 1.5
+comida "hamburguer"
+cadastro "Juliana"
+restaurante "Giraffas"
+  end
+
+end

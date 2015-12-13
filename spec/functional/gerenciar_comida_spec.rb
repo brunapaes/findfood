@@ -10,7 +10,7 @@ feature 'Registrar Comida' do
     preencher_e_verificar_comida
   end
 
-  scenario 'alterar comida' do 
+  scenario 'alterar Comida' do 
 
     comida = FactoryGirl.create(:comida)
     visit edit_comida_path(comida)
@@ -18,7 +18,7 @@ feature 'Registrar Comida' do
 
   end
 
-  scenario 'excluir comida' do 
+  scenario 'excluir Comida' do 
 
     cadastro = FactoryGirl.create(:comida)
     visit comidas_path
@@ -29,17 +29,15 @@ feature 'Registrar Comida' do
 
    def preencher_e_verificar_comida
 
-      fill_in 'Codigo',     :with => "20141"
       fill_in 'Nome',  :with => "hamburguer"
-      fill_in 'Tipo',     :with => "fast food"
-      fill_in 'Preco',     :with => "7.00"
+      fill_in 'Tipo',  :with => "fast food"
+      fill_in 'Valor', :with => "7"
 
       click_button 'Salvar'
-
-      expect(page).to have_content 'Codigo: 20141'
-      expect(page).to have_content 'Nome: hamburguer'
+	  
+	  expect(page).to have_content 'Nome: hamburguer'
       expect(page).to have_content 'Tipo: fast food'
-      expect(page).to have_content 'Preco: 7.00'
+      expect(page).to have_content 'Valor: 7'
 
    end
 end

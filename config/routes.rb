@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
+  resources :solicitacaos
+  resources :locals
   resources :comidas
-  resources :pedidos
   resources :restaurantes
+  resources :comidas
+  resources :cadastros
+  get 'welcome/index'
+
+  resources :estabelecimentos
   resources :estabelecimentos
   resources :estabeleciments
   resources :estabelecimentos
   resources :estabelecimentos
   resources :estabelecimentos
-  resources :estabelecimentos
-  resources :alimentos
-  resources :estabelecimentos
-  resources :cadastros
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

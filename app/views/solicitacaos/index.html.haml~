@@ -1,0 +1,25 @@
+%h1 Listing solicitacaos
+
+%table
+  %thead
+    %tr
+      %th Numero
+      %th Valor
+      %th Comida
+      %th
+      %th
+      %th
+
+  %tbody
+    - @solicitacaos.each do |solicitacao|
+      %tr
+        %td= solicitacao.numero
+        %td= solicitacao.valor
+        %td= solicitacao.comida
+        %td= link_to 'Show', solicitacao
+        %td= link_to 'Edit', edit_solicitacao_path(solicitacao)
+        %td= link_to 'Destroy', solicitacao, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Solicitacao', new_solicitacao_path

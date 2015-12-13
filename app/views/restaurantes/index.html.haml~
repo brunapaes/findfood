@@ -16,7 +16,7 @@
         %td= restaurante.tipo
         %td= link_to 'Show', restaurante
         %td= link_to 'Edit', edit_restaurante_path(restaurante)
-        %td= link_to 'Destroy', restaurante, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Excluir', restaurante, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 

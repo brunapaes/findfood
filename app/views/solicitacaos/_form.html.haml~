@@ -1,0 +1,10 @@
+= simple_form_for(@solicitacao) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :numero
+    = f.input :valor
+    = f.association :comida
+
+  .form-actions
+    = f.button :submit

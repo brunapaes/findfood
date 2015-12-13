@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Numero:
+  = @solicitacao.numero
+%p
+  %b Valor:
+  = @solicitacao.valor
+%p
+  %b Comida:
+  = @solicitacao.comida
+
+= link_to 'Edit', edit_solicitacao_path(@solicitacao)
+\|
+= link_to 'Back', solicitacaos_path
